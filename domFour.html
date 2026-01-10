@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .no-bullets{
+            list-style-type: none;
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body style="background-color: #414141; color : #fff; line-height: 1.5em; ">
+    <ul class="language" >
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang('Typescript')
+
+    function addOptiLang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('Golang')
+    addOptiLang('C++')
+
+    //edit
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = 'Mojo'
+    // console.log(secondLang);
+    
+    const newLi = document.createElement('li')
+    // console.log(newLi);
+    newLi.textContent = 'Mojo'
+    secondLang.replaceWith(newLi)
+
+    //edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Gojo<li/>'
+
+    //remove 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>

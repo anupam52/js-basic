@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more into dom</title>
+</head>
+<body style="background-color: #414141; color: #fff;" >
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = 'main';
+    div.id  =  Math.round(Math.random()*10 + 1)
+    div.setAttribute("title","generatedTitle");
+    div.style.backgroundColor = 'green';
+    div.style.padding = "12px";
+    // div.innerText = "If you smell what The Rock is cooking";
+    const addText = document.createTextNode("If you smell what The Rock is cooking")
+    div.appendChild(addText)
+
+    const p = document.createElement('p')
+    console.log(p);
+
+    p.className = "paragraph-boy"
+    p.id = 'paraId'
+    p.setAttribute('title', 'setTitle')
+    p.style.color = 'red'
+    p.style.backgroundColor = "#fff"
+    const pAddText = document.createTextNode("And when I'm back in Chicago, I feel it Another version of me, I was in it I wave goodbye to the end of beginning")
+    p.appendChild(pAddText)
+    document.body.appendChild(div)
+    document.body.appendChild(p)
+
+
+
+    
+</script>
+</html>
